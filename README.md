@@ -685,36 +685,50 @@ Overall, the project is already cost-efficient, and most expenses are due to ess
 
 ## 12.1 Team Working Agreement
 
-Write how your team will work together.
+Our team followed a collaborative and structured approach to complete the project efficiently within the given time.
 
-Include:
+Tasks were divided based on individual strengths.  
+- **Sakshi Gupta** handled electronics and hardware implementation.  
+- **Kunal Dewangan** focused on prototyping and fabrication.  
+- **Prisha Ale** supported testing, wiring, and system connections.  
+- **Shubham Kulkarni** managed documentation, research, and planning.  
 
-- how tasks are divided,
-- how decisions are made,
-- how progress will be checked,
-- what happens if a task is delayed,
-- how documentation will be maintained.
+All major decisions (component selection, circuit design, and logic flow) were made through group discussions to ensure everyone contributed and agreed before implementation.
 
-**Response:**  
+Progress was checked regularly after completing each module such as sensor integration, motor setup, and coding. Small testing checkpoints helped identify and fix issues early.
 
+If any task was delayed, responsibilities were adjusted dynamically. Other team members assisted in completing the task to ensure the overall project timeline was maintained.
+
+Documentation was maintained alongside development. Notes on circuit design, code logic, and testing results were recorded continuously to avoid last-minute work and ensure a well-structured final report.
+
+---
 
 ## 12.2 Task Breakdown
 
-| Task ID | Task                    | Owner    | Estimated Hours | Deadline     | Dependency | Status |
-| ------- | ----------------------- | -------- | ---------------:| ------------ | ---------- | ------ |
-| T1      | `[Finalize concept]`    | `[Both]` | `2`             | `1st April`  | `None`     | `Done` |
+| Task ID | Task                          | Owner              | Estimated Hours | Status |
+| ------- | ----------------------------- | ------------------ | ---------------:| ------ |
+| T1      | Finalize project concept      | All                | 2               | Done   |
+| T2      | Component selection & BOM     | Sakshi, Shubham    | 2               | Done   |
+| T3      | Circuit design & wiring       | Sakshi             | 4               | Done   |
+| T4      | Prototyping & assembly        | Kunal              | 4               | Done   |
+| T5      | Sensor integration            | Sakshi, Prisha     | 3               | Done   |
+| T6      | Coding & logic implementation | Sakshi             | 5               | Done   |
+| T7      | Testing & debugging           | Prisha, All        | 4               | Done   |
+| T8      | Final assembly                | Kunal              | 3               | Done   |
+| T9      | Documentation & report        | Shubham            | 3               | Done   |
 
+---
 
 ## 12.3 Responsibility Split
 
-| Area                 | Main Owner | Support Owner |
-| -------------------- | ---------- | ------------- |
-| Concept              | `[Gopal]`  | `[Kader]`    |
-| Electronics          | `[]`       | `[]`     |
-| Coding               | `[]`       | `[]`     |
-| Mechanical build     | `[]`       | `[]`    |
-| Testing              | `[]`       | `[]`    |
-| Documentation        | `[]`       | `[]`     |
+| Area                 | Main Owner        | Support Owner        |
+| -------------------- | ----------------- | -------------------- |
+| Concept              | All               | -                    |
+| Electronics          | Sakshi Gupta      | Prisha Ale           |
+| Coding               | Sakshi Gupta      | Kunal Dewangan       |
+| Mechanical build     | Kunal Dewangan    | Prisha Ale           |
+| Testing              | Prisha Ale        | All                  |
+| Documentation        | Shubham Kulkarni  | All                  |
 
 ---
 

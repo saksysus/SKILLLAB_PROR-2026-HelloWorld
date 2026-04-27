@@ -637,21 +637,21 @@ Overall, the chosen components balance functionality, cost, and ease of implemen
 
 ## 11.3 Items You Chose
 
-| Item | Why Needed | Latest Safe Date to Procure | Status |
-|------|-----------|-----------------------------|--------|
-| BO Motors + Wheels | Drive system for robot movement | 15th April | Received |
-| Li-ion Batteries + Holder | Portable power supply for entire system | Before testing | Received |
-| Robot Chassis | Structural base to mount all components | 15th April | Received |
-| Jumper Wires | Electrical connections between components | Before assembly | Available |
-| Breadboard | Prototyping and testing circuits | Before testing | Available |
-| L298N Motor Driver | Control direction and speed of motors | Before testing | Available |
-| MQ2 Gas Sensor | Detect smoke and LPG gases | Before testing | Available |
-| MQ4 Gas Sensor | Detect methane gas | Before testing | Available |
-| MQ7 Gas Sensor | Detect carbon monoxide (CO) | Before testing | Available |
-| Ultrasonic Sensor (HC-SR04) | Obstacle detection and distance measurement | Before testing | Available |
-| Servo Motor (SG90) | Rotates sensors for scanning environment | Before testing | Available |
-| Buzzer | Audio alert system for hazards | Before testing | Available |
-| LEDs (Red, Yellow, Green) | Visual indication of system status | Before testing | Available |
+| Item | Why Needed |
+|------|-----------|
+| BO Motors + Wheels | Drive system for robot movement |
+| Li-ion Batteries + Holder | Portable power supply for entire system |
+| Robot Chassis | Structural base to mount all components |
+| Jumper Wires | Electrical connections between components |
+| Breadboard | Prototyping and testing circuits |
+| L298N Motor Driver | Control direction and speed of motors |
+| MQ2 Gas Sensor | Detect smoke and LPG gases |
+| MQ4 Gas Sensor | Detect methane gas |
+| MQ7 Gas Sensor | Detect carbon monoxide (CO) |
+| Ultrasonic Sensor (HC-SR04) | Obstacle detection and distance measurement |
+| Servo Motor (SG90) | Rotates sensors for scanning environment |
+| Buzzer | Audio alert system for hazards |
+| LEDs (Red, Yellow, Green) | Visual indication of system status |
 
 ## 11.4 Budget Summary
 

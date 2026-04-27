@@ -906,15 +906,33 @@ How well did you manage time, tasks, and responsibilities?
 
 ## 18.2 Technical Reflection
 
-What did you learn about:
+### Electronics
+We learned about practical electronics by working with real components such as the Shrike (RP2040) board, L298N motor driver, ultrasonic sensor, servo motor, and gas sensors. We understood how power distribution, grounding, and voltage levels affect the stability of the entire system.
 
-- electronics,
-- coding,
-- mechanisms,
-- fabrication,
-- integration?
+---
 
-**Response:**  
+### Motor Driver and Sensors
+We learned how a motor driver (L298N) acts as an interface between low-power microcontroller signals and high-power DC motors. We also explored how different sensors like ultrasonic and gas sensors convert physical signals into electrical data that can be processed by the controller.
+
+---
+
+### Coding
+We gained experience in programming microcontrollers to control hardware components. This included writing logic for motor control, reading sensor values, and integrating multiple modules together to achieve real-time behavior in the robot system.
+
+---
+
+### Mechanisms
+We learned how mechanical movement is achieved using DC motors and how a servo motor can be used for controlled rotation. We also understood how the physical structure of the robot affects movement stability and performance.
+
+---
+
+### Fabrication
+We worked on assembling the robot chassis, mounting sensors, and securely fixing components. This helped us understand the importance of proper wiring, structural stability, and physical alignment in embedded systems.
+
+---
+
+### Integration
+We learned how to integrate hardware and software components into a single working system. Combining sensors, actuators, and control logic allowed us to build a functional autonomous robot that responds to real-world inputs in real time.
 
 
 ## 18.3 Design Reflection

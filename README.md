@@ -16,7 +16,7 @@
 
 After forking this repository, rename it using the format:
 
-`SKILLLAB_PROR-2026-Hello World`
+`SKILLLAB_PROR-2026-TeamName`
 
 ### Example
 
@@ -57,16 +57,20 @@ By the final review, this README should clearly show:
 
 ## 1.1 Studio / Group Name
 
-`![Uploading image.png…]()`
+`ToxicTrack Innovators`
+
+---
 
 ## 1.2 Team Members
 
-| Name               | Primary Role                          | Secondary Role        | Strengths Brought to the Project              |
-| ------------------ | ------------------------------------- | --------------------- | --------------------------------------------  |
-| Sakshi Gupta       | Electronics & Hardware Implementation | System Integration    | Circuit Design, Embedded Systems, Debugging   |
-| Kunal Dewangan     | Electronics & Software development    | Fabrication           | Prototyping, Component Handling, Assembly     |
-| Prisha Ale         | Documentation                         | UI/Presentation       | Clear Writing, Creativity, Presentation Skills|
-| Shubham Kulkarni   | Documentation                         | Research & Planning   | Technical Writing, Organization, Analysis     |
+| Name               | Primary Role                             | Secondary Role        | Strengths Brought to the Project              |
+| ------------------ | -----------------------------------------| --------------------- | -------------------------------------------- |
+| Sakshi Gupta       | Electronics & Hardware Implementation    | System Integration    | Circuit Design, Embedded Systems, Debugging   |
+| Kunal Dewangan     | Electronics & Software Development       | Fabrication           | Prototyping, Component Handling, Assembly     |
+| Prisha Ale         | Documentation                            | UI/Presentation       | Clear Writing, Creativity, Presentation Skills|
+| Shubham Kulkarni   | Documentation                            | Research & Planning   | Technical Writing, Organization, Analysis     |
+
+---
 
 ## 1.3 Project Title
 
@@ -74,22 +78,27 @@ By the final review, this README should clearly show:
 
 `(Autonomous Gas Detection & Hazard Tracking System)`
 
-<img width="800" alt="Gas Detection Robot" src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc" />
+<p align="center">
+  <img src="images/toxictrack-bot.png" alt="ToxicTrack Bot" width="800"/>
+</p>
+
+---
 
 ## 1.4 One-Line Pitch
 
-`A projected, fully customizable time portal where engineering education is done through PUBG battlefield in the comfort of our home`
+`A mobile robot that uses an electronic nose and obstacle-aware navigation to autonomously detect harmful gases, identify their type, and respond with real-time alerts.`
+
+---
 
 ## 1.5 Expanded Project Idea
 
-In 1–2 paragraphs, explain:
+The project is a smart autonomous robot built using **Shrike Lite RP2040** that combines multiple sensing and response systems into one compact platform. The system uses an **electronic nose approach**, where multiple gas sensors (MQ2, MQ4, MQ7) work together to detect and differentiate gases such as smoke, LPG, methane, and carbon monoxide. Instead of relying on a single sensor, the system compares patterns across sensors to identify the type of gas present.
 
-- what your project is,
-- what kind of experience it creates,
-- what technologies are involved.
+An **obstacle detection system** using an ultrasonic sensor ensures that the robot can safely navigate its environment without collisions. The robot continuously measures distance from nearby objects and adjusts its movement accordingly.
 
-**Response:**  
-`A projected and fully customizable time portal can transform engineering education into an immersive PUBG-style battlefield experience from the comfort of home. In this environment, students can learn engineering concepts by entering a virtual battlefield where challenges, obstacles, and missions are designed around real technical problems. Instead of passively studying theory, learners actively apply concepts such as electronics, coding, sensors, robotics, mechanics, and system design to complete missions, solve problems, and progress through different levels. This approach makes engineering education more interactive, engaging, and practical by combining gaming, simulation, and hands-on problem-solving in a familiar and exciting format.`
+The **actuation system** includes a buzzer, RGB LEDs, and a servo motor. The servo rotates the sensor array to scan the surroundings like a radar system, helping identify the direction of gas concentration. LEDs indicate safety levels (green, yellow, red), while the buzzer provides alert signals based on danger level.
+
+Together, the system creates an interactive experience where the robot can move through an environment, detect hazardous gases, identify them, avoid obstacles, and alert users — all autonomously. The project integrates embedded programming, sensor fusion, and real-time decision-making.
 
 ---
 
@@ -97,42 +106,52 @@ In 1–2 paragraphs, explain:
 
 ## 2.1 Experience, Not Social Problem
 
-This module does **not** require your project to solve a large social problem.
+This project focuses on creating an **interactive technological experience** rather than solving a large abstract social problem.
 
-You are allowed to build:
+The robot acts as a **smart embedded artifact** that physically senses, processes, and reacts in real-time. Watching the robot move, scan its surroundings, change LED colors, and trigger alerts creates an engaging and dynamic demonstration of embedded systems in action.
 
-- toys,
-- games,
-- interactive objects,
-- playful machines,
-- kinetic artifacts,
-- humorous devices,
-- strange but delightful experiences,
-- things that are entertaining to use or watch.
+It fits into the category of:
+- Interactive machine  
+- Kinetic artifact  
+- Smart sensing system  
 
+The experience of seeing a robot “sniff” the environment and respond to invisible threats makes the project both educational and engaging.
 
+---
 
 # 3. Inspiration
 
 ## 3.1 References
 
-List what inspired the project.
-
-| Source Type | Title / Link                                                        | What Inspired You                                                                         |
-| ----------- | ------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `[Video]`   | `https://www.instagram.com/reel/DW4CT7WCDry/?igsh=cXg3dzAxYmdncDBo` | `How projection mapping can be used to create interactive digital + physical experiences` |
-|             |                                                                     |                                                                                           |
-|             |                                                                     |                                                                                           |
-
-## 3.2 Original Twist
-
-What makes your project original?
-
-**Response:**  
-
+| Source Type | Title / Link | What Inspired You |
+| ----------- | ------------ | ----------------- |
+| Concept | Biological Olfaction (Human Nose) | Using multiple sensors to identify different smells (electronic nose concept) |
+| Technology | MQ Sensor Datasheets (Winsen) | Understanding cross-sensitivity of gas sensors |
+| Concept | SONAR / Radar Systems | Rotational scanning using servo motor |
+| Practical | Industrial Gas Detectors | Inspired idea of detecting gas but making it mobile |
 
 ---
 
+## 3.2 Original Twist
+
+What makes this project original is the **combination of mobility, multi-gas detection, and directional sensing** in a single system.
+
+Most gas detectors are static and detect only one type of gas. Most robots with obstacle avoidance do not detect environmental hazards.
+
+This project combines both and adds a **servo-based scanning system**, allowing the robot to detect not only the presence of gas but also the direction of highest concentration.
+
+Additionally, the use of **multiple gas sensors together (MQ2, MQ4, MQ7)** enables basic gas type identification, which is not possible with a single sensor.
+
+The result is a robot that:
+- Moves autonomously  
+- Detects multiple gases  
+- Identifies gas types  
+- Avoids obstacles  
+- Alerts users in real-time  
+
+This transforms a simple detector into an **active hazard tracking system**.
+
+---
 # 4. Project Intent
 
 ## 4.1 User Journey 

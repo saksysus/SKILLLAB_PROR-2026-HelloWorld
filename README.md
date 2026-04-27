@@ -593,24 +593,25 @@ Repeat Loop
 
 # 11. Bill of Materials
 
-## 11.3 Items You Chose
+## 11.1 Full BOM
 
-| Item | Why Needed |
-|------|-----------|
-| BO Motors + Wheels | Drive system for robot movement |
-| Li-ion Batteries + Holder | Portable power supply for entire system |
-| Robot Chassis | Structural base to mount all components |
-| Jumper Wires | Electrical connections between components |
-| Breadboard | Prototyping and testing circuits |
-| L298N Motor Driver | Control direction and speed of motors |
-| MQ2 Gas Sensor | Detect smoke and LPG gases |
-| MQ4 Gas Sensor | Detect methane gas |
-| MQ7 Gas Sensor | Detect carbon monoxide (CO) |
-| Ultrasonic Sensor (HC-SR04) | Obstacle detection and distance measurement |
-| Servo Motor (SG90) | Rotates sensors for scanning environment |
-| Buzzer | Audio alert system for hazards |
-| LEDs (Red, Yellow, Green) | Visual indication of system status |
-
+| Item | Quantity | In Kit? | Need to Buy? | Estimated Cost (INR) | Material / Spec | Why This Choice? |
+|------|---------|---------|--------------|----------------------|------------------|------------------|
+| Shrike Lite RP2040 | 1 | Yes | No | 0 | RP2040-based board | Main microcontroller for processing and control |
+| Motor Driver | 1 | Yes | No | 0 | L298N Dual H-Bridge | To control both DC motors |
+| DC Motors + Wheels | 2 | No | Yes | 150 | BO Motors + 6 cm wheels | Provides sufficient torque for movement |
+| Li-ion Batteries + Holder | 1 | No | Yes | 200 | 2x 18650 cells | Portable and rechargeable power source |
+| MQ2 Gas Sensor | 1 | Yes | No | 0 | LPG/Smoke sensor | Detects smoke and combustible gases |
+| MQ4 Gas Sensor | 1 | Yes | No | 0 | Methane sensor | Detects methane (CNG) |
+| MQ7 Gas Sensor | 1 | Yes | No | 0 | CO sensor | Detects carbon monoxide (critical gas) |
+| Ultrasonic Sensor | 1 | Yes | No | 0 | HC-SR04 | Measures distance for obstacle avoidance |
+| Servo Motor | 1 | Yes | No | 0 | SG90 180° servo | Enables directional scanning |
+| Buzzer | 1 | Yes | No | 0 | Active buzzer | Provides audio alerts |
+| LEDs (Red, Yellow, Green) | 3 | Yes | No | 0 | 5mm LEDs | Visual hazard indication |
+| Resistors | 6 | Yes | No | 0 | 220Ω, 1kΩ | Current limiting and protection |
+| Robot Chassis | 1 | No | Yes | 200 | Acrylic 2-wheel base | Structural support |
+| Jumper Wires | 1 set | Yes | No | 0 | Male-Male wires | Circuit connections |
+| Breadboard | 1 | Yes | No | 0 | Standard | Prototyping and testing |
 
 ## 11.2 Material Justification
 
@@ -657,20 +658,28 @@ Overall, the chosen components balance functionality, cost, and ease of implemen
 
 | Budget Item           | Estimated Cost              |
 | --------------------- | ---------------------------:|
-| Electronics           | `[400]`                     |
-| Mechanical parts      | `[200]`                     |
+| Electronics           | `[300]`                     |
+| Mechanical parts      | `[350]`                     |
 | Fabrication materials | `[0 (Available on campus)]` |
 | Purchased extras      | `[0]`                       |
-| Contingency           | `[300]`                     |
+| Contingency           | `[250]`                     |
 | **Total**             | `[900]`                     |
 
 ## 11.5 Budget Reflection
 
-If your cost is too high, what can be simplified, removed, substituted, or shared?
+If the overall project cost needs to be reduced, several optimizations can be considered without significantly affecting functionality.
 
-**Response:**  
+The **robot chassis** can be replaced with a low-cost or DIY alternative (cardboard, acrylic scrap, or 3D-printed parts available on campus), reducing mechanical expenses.
 
----
+The **Li-ion battery pack** can be substituted with a **power bank** or shared between teams to avoid additional purchase costs.
+
+Some components like **breadboard, jumper wires, and LEDs** can be reused from existing lab kits instead of purchasing separately.
+
+If further cost reduction is required, the system can operate with **fewer gas sensors (e.g., using only MQ2)** for basic detection, though this will reduce gas classification accuracy.
+
+The **servo motor** can also be removed in a simplified version, limiting the system to forward-only sensing instead of directional scanning.
+
+Overall, the project is already cost-efficient, and most expenses are due to essential components like motors and power systems. With minor substitutions and shared resources, the total budget can be reduced further while maintaining core functionality.
 
 # 12. Planning the Work
 

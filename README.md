@@ -308,7 +308,7 @@ Add a sketch with labels showing:
 
 | Component                     | Quantity | Purpose                                      |
 | ---------------------------- | -------- | -------------------------------------------- |
-| Shrike Lite RP2040           | 1        | Main microcontroller (processing & control)  |
+| Shrike Lite RP2040           | 2        | Main microcontroller (processing & control)  |
 | MQ2 Gas Sensor               | 1        | Detect smoke, LPG, combustible gases         |
 | MQ4 Gas Sensor               | 1        | Detect methane (CNG)                         |
 | MQ7 Gas Sensor               | 1        | Detect carbon monoxide (CO)                  |
@@ -319,11 +319,10 @@ Add a sketch with labels showing:
 | Robot Chassis                | 1        | Base structure of the robot                  |
 | Buzzer                       | 1        | Audio alert for gas detection                |
 | LEDs (Red, Yellow, Green)    | 3        | Visual status indication                     |
-| Resistors (220Ω, 10kΩ)       | Multiple | Current limiting & circuit stability         |
+| Resistors (220Ω)             | 3        | Current limiting & circuit stability         |
 | Li-ion Battery Pack          | 1–2      | Power supply for entire system               |
-| Buck Converter               | 1        | Step-down voltage for stable power supply    |
 | Jumper Wires                 | Multiple | Circuit connections                          |
-| Breadboard / PCB             | 1        | Prototyping and circuit assembly             |
+| Breadboard / PCB             | 2        | Prototyping and circuit assembly             |
 
 ## 8.2 Wiring Plan
 

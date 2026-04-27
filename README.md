@@ -77,6 +77,9 @@ By the final review, this README should clearly show:
 
 <img width="1536" height="1024" alt="track bot" src="https://github.com/user-attachments/assets/9f8d940d-ea44-42ad-9427-551a0479ecfe" />
 
+Check out the working demo of our **Electronic Nose + Obstacle-Aware Smart Robot**:
+
+[![Watch the Demo](https://img.youtube.com/vi/x_7ZoRCEao4/0.jpg)](https://youtube.com/shorts/x_7ZoRCEao4?feature=share)
 
 ## 1.4 One-Line Pitch
 
@@ -908,13 +911,11 @@ Initially, the project was planned as a simple stationary sensor-based system th
 ## 18.1 Team Reflection
 
 ### What did our team do well?
-Our team worked effectively by dividing tasks based on individual strengths. Sakshi and Kunal focused on building and assembling the motor system and chassis, ensuring the robot structure and movement system were properly implemented. Prisha handled testing and debugging of all sensors, making sure the ultrasonic and gas sensors were working correctly and giving accurate readings. Shubham took responsibility for documentation, PPT preparation, and maintaining project logs, ensuring all work was properly recorded and presented.
-
+Shubham AND Sakshi managed firmware architecture and documentation efficiently, keeping the system modular so each subsystem could be tested independently. Kunal and Sakshi both handled hardware assembly with precision — the voltage divider soldering and servo mount were built cleanly under time pressure.Prisha tested all the components so that they do not create any obstacle during working of our model. The biggest time drain was the MQ sensor calibration: clean-air baseline values needed more time than anticipated. Tasks were divided effectively and communication was direct throughout the 8-hour session.
 ---
 
 ### What slowed us down?
-The main challenges we faced were wiring issues, power stability problems, and debugging sensor outputs. Integrating multiple components like motors, sensors, and servo together also required multiple iterations. At times, incorrect connections and signal mismatches slowed down development and required rework.
-
+connections and minor issues
 ---
 
 ### Time, Task, and Responsibility Management

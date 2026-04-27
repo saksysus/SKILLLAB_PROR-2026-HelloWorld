@@ -293,12 +293,12 @@ Insert a hand-drawn or software-made circuit diagram.
 
 # 9. Power Plan
 
-| Question         | Response                                                                                                                                          |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Power source     | `Battery (Li-ion pack)`                                                                                                                           |
-| Voltage required | `~6–8.4V for motors (via driver), stepped down to 5V for ESP32 (buck converter)`                                                                  |
-| Current concerns | `Motors can draw high current under load, which may cause voltage drops affecting ESP32 and WiFi stability`                                       |
-| Safety concerns  | `Avoid over-discharging Li-ion batteries, ensure proper voltage regulation, prevent short circuits, and secure wiring to avoid loose connections` |
+| Question           | Response |
+|-------------------|---------|
+| **Power source**  | Li-ion Battery Pack (2-cell recommended) |
+| **Voltage required** | ~6–8.4V for motors (via motor driver), stepped down to **5V for Shrike Lite RP2040 and sensors** using a buck converter |
+| **Current concerns** | Motors and servo can draw high current under load, which may cause voltage drops affecting the RP2040, gas sensors, and overall system stability |
+| **Safety concerns** | Avoid over-discharging Li-ion batteries, ensure common ground across all components, prevent short circuits, and secure wiring to avoid loose connections |
 
 ---
 

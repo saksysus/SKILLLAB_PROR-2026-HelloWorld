@@ -244,12 +244,21 @@ Include:
 
 **Response:**  
 
-## 6.3 Input / Output Map
+## 6.3 — Input / Output Map
 
-| System Part                              | Type            | What It Does                                                               |
-
-
----
+| System Part | Type | What It Does |
+|------------|------|-------------|
+| **MQ2 Gas Sensor** | Analog Input | Detects smoke, LPG, and general combustible gases — outputs voltage proportional to concentration |
+| **MQ4 Gas Sensor** | Analog Input | Detects methane (CNG) — higher sensitivity to CH₄ than MQ2 |
+| **MQ7 Gas Sensor** | Analog Input | Detects carbon monoxide (CO) — most critical life-safety sensor in the array |
+| **HC-SR04 Ultrasonic Sensor** | Digital Input | Measures distance to nearest obstacle — triggers stop, caution, or scan behaviour |
+| **Microcontroller** | Processing | Reads all inputs, runs classification and obstacle logic, and drives all outputs |
+| **Green LED** | Digital Output | Indicates safe state — no gas detected, path clear |
+| **Yellow LED** | Digital Output | Indicates caution — moderate gas reading or obstacle in caution zone (30–60 cm) |
+| **Red LED** | Digital Output | Indicates danger — gas threshold exceeded or obstacle in critical zone (< 30 cm) |
+| **Buzzer** | Digital Output | Sounds alarm on danger detection — pattern varies by gas type |
+| **Servo Motor** | PWM Output | Rotates sensor array (0–180°) for directional scanning during obstacle or gas events |
+| **DC Drive Motors** | PWM Output | Propels robot forward, slows in caution zone, stops in critical zone |
 
 # 7. Sketches and Visual Planning
 

@@ -302,19 +302,28 @@ Add a sketch with labels showing:
 
 ---
 
-# 8. Electronics Planning
+## 8. Electronics Planning
 
-## 8.1 Electronics Used
+### 8.1 Electronics Used
 
-| Component                 | Quantity | Purpose                               |
-| ------------------------- | --------:| ------------------------------------- |
-| `[ESP32]`                 | `1`      | `[Main controller]`                   |
-| `[L298N Motor Driver]`    | `1`      | `[Control Motors]`                    |
-| `[BO Motors]`             | `2`      | `[Rotate wheels]`                     |
-| `[Buck Converter]`        | `1`      | `[Power ESP32]`                       |
-| `[Li Ion Battery Pack]`   | `2`      | `[Power]`                             |
-| `[Projector]`             | `1`      | `[Display obstacles]`                 |
-| `Camera (Webcam / Phone)` | `1`      | `[Tracks car position using markers]` |
+| Component                     | Quantity | Purpose                                      |
+| ---------------------------- | -------- | -------------------------------------------- |
+| Shrike Lite RP2040           | 1        | Main microcontroller (processing & control)  |
+| MQ2 Gas Sensor               | 1        | Detect smoke, LPG, combustible gases         |
+| MQ4 Gas Sensor               | 1        | Detect methane (CNG)                         |
+| MQ7 Gas Sensor               | 1        | Detect carbon monoxide (CO)                  |
+| HC-SR04 Ultrasonic Sensor    | 1        | Obstacle detection                           |
+| Servo Motor (SG90)           | 1        | Rotate sensors for directional scanning      |
+| L298N Motor Driver           | 1        | Control DC motors                            |
+| BO Motors                    | 2        | Drive wheels (robot movement)                |
+| Robot Chassis                | 1        | Base structure of the robot                  |
+| Buzzer                       | 1        | Audio alert for gas detection                |
+| LEDs (Red, Yellow, Green)    | 3        | Visual status indication                     |
+| Resistors (220Ω, 10kΩ)       | Multiple | Current limiting & circuit stability         |
+| Li-ion Battery Pack          | 1–2      | Power supply for entire system               |
+| Buck Converter               | 1        | Step-down voltage for stable power supply    |
+| Jumper Wires                 | Multiple | Circuit connections                          |
+| Breadboard / PCB             | 1        | Prototyping and circuit assembly             |
 
 ## 8.2 Wiring Plan
 

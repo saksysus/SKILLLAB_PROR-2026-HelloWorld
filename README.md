@@ -191,21 +191,21 @@ Check all that apply.
 
 - [x] Sensor-based
 
-- [x] App-connected
+- [ ] App-connected
 
 - [x] Motorized
 
-- [ ] Sound-based
+- [x] Sound-based
 
 - [x] Light-based
 
-- [x] Screen/UI-based
+- [ ] Screen/UI-based
 
 - [x] Fabricated structure
 
-- [x] Game logic based
+- [ ] Game logic based
 
-- [x] Installation
+- [ ] Installation
 
 - [ ] Other:
 

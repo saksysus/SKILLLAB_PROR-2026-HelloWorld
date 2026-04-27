@@ -149,19 +149,29 @@ This transforms a simple detector into an **active hazard tracking system**.
 # 4. Project Intent
 
 ## 4.1 User Journey 
-
-Describe exactly how a user will use the project.Make it a story
-**Response:**  
+Imagine a factory worker notices a faint smell near a storage room but isn't sure if it's dangerous or where it's coming from. Instead of walking in blind, he deploys the robot.
+The robot powers on — the green LED lights up, confirming the system is ready. It begins moving forward through the corridor on its own. The HC-SR04 constantly watches ahead; when it spots a wall or object within 60 cm, the yellow LED flicks on, the robot slows, the servo starts sweeping left and right like a radar head, scanning for a clear path and simultaneously rotating the gas sensors to check all directions.
+As it rounds the corner near the storage room, MQ2 and MQ4 readings spike. The robot immediately cross-checks the pattern — MQ2 high, MQ4 high, MQ7 low — and classifies it as an LPG leak. The red LED switches on. The buzzer fires a rapid repeating alarm. The servo locks onto the direction of highest concentration and holds there, pointing like a compass toward the source.
+The worker, watching from a safe distance, sees the red light, hears the alarm, and knows exactly — gas detected, type identified, direction found. He can now take action without ever entering the hazardous zone himself.
+ 
 
                                                   |
 
 
 
----
+
 
 # 5. Definition of Success
 
 ## 5.1 Definition of “Usable”
+The project is considered usable when all three subsystems work together in real time without manual intervention:
+
+The robot moves forward and avoids obstacles autonomously
+At least one gas type (LPG, methane, or CO) is correctly detected and classified when introduced near the sensors
+The correct LED colour activates and the buzzer sounds in response to the detected hazard level
+The servo sweeps and holds direction during a scan cycle
+
+If all four of these conditions are met simultaneously in a live test, the system is usable
 
 
 
@@ -169,15 +179,26 @@ Describe exactly how a user will use the project.Make it a story
 
 What is the smallest version of this project that still delivers the core experience?
 
-**Response:**  
+The smallest version that still delivers the core experience is:
+
+MQ2 + MQ7 only (two sensors instead of three) detecting smoke and CO
+HC-SR04 stopping the robot when an obstacle is detected — no servo sweep, just a full stop
+Red LED + buzzer activating when gas threshold is crossed
+Robot mounted on a static base (no motor drive) if chassis isn't ready — sensors, detection, and alerting still demonstrate the full concept
+
+This version proves the electronic nose concept and the alert system even if mobility is incomplete.
 
 
 ## 5.3 Stretch Features
 
 What features are nice to have but not essential?
 
+Full servo radar sweep with directional gas concentration mapping (identifying which angle has the highest reading)
+Differentiating buzzer beep patterns per gas type (e.g. slow beep for smoke, fast continuous for CO)
+Serial/WiFi dashboard on laptop showing live MQ2, MQ4, MQ7 readings as a graph
+Auto-return behaviour — robot reverses and halts in safe zone after detecting danger threshold
+PPM estimation using sensor calibration curves for quantitative gas reporting
 
----
 
 # 6. System Overview
 

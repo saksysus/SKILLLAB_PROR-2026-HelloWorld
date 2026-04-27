@@ -16,7 +16,7 @@
 
 After forking this repository, rename it using the format:
 
-`SKILLLAB_PROR-2026-TeamName`
+`SKILLLAB_PROR-2026-Hello World`
 
 ### Example
 

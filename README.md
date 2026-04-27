@@ -411,79 +411,187 @@ Insert a hand-drawn or software-made circuit diagram.
 
 # 9. Power Plan
 
-| Question         | Response                                                                                                                                          |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Power source     | `Battery (Li-ion pack)`                                                                                                                           |
-| Voltage required | `~6–8.4V for motors (via driver), stepped down to 5V for ESP32 (buck converter)`                                                                  |
-| Current concerns | `Motors can draw high current under load, which may cause voltage drops affecting ESP32 and WiFi stability`                                       |
-| Safety concerns  | `Avoid over-discharging Li-ion batteries, ensure proper voltage regulation, prevent short circuits, and secure wiring to avoid loose connections` |
+| Question | Response |
+|----------|---------|
+| **Power source** | Li-ion battery pack (2S, 7.4V nominal) |
+| **Voltage for motors** | 5V via onboard VBUS from USB-C or direct Li-ion regulated output |
+| **Voltage for RP2040** | 3.3V from onboard regulator |
+| **Voltage for MQ sensors (heater)** | 5V from VBUS — each heater draws ~150 mA |
+| **Voltage for servo** | 5V from VBUS — separate decoupled line with 100µF capacitor |
+| **MQ AOUT to ADC** | 5V output stepped down to ~2.5V using 10kΩ + 10kΩ voltage divider before ADC pins |
+| **Current concern** | All three MQ heaters draw ~450 mA total — ensure VBUS can handle this along with servo peak (~250 mA) |
 
 ---
+
+### ⚠️ Safety Considerations
+
+- Avoid over-discharging Li-ion battery below **3V per cell**
+- Add a **1A polyfuse** on the 5V rail for protection
+- Ensure all wiring is properly insulated using **heat shrink**
+- Avoid exposed conductors, especially near **MQ sensor heater elements**
+- Provide adequate ventilation around MQ sensors to prevent overheating
 
 # 10. Software Planning
 
 ## 10.1 Software Tools
 
-| Tool / Platform                | Purpose                                        |
-| ------------------------------ | ---------------------------------------------- |
-| `[MicroPython]`                | `Control ESP32`                                |
-| `[Python/PyGame/OpenCV]`       | `Track markers, game logic, create projection` |
-| `[Fusion/Blender/Illustrator]` | `[Prototyping structure]`                      |
-|                                |                                                |
+| Tool / Platform              | Purpose                                          |
+|-----------------------------|--------------------------------------------------|
+| Arduino (RP2040 Core)       | Programming and controlling Shrike Lite RP2040   |
+| Serial Monitor              | Debugging sensor values and system behavior      |
+| Embedded C/C++              | Writing logic for motors, sensors, and control   |
+
+---
+
+# 10. Software Architecture & Logic
 
 ## 10.2 Software Logic
 
-Describe what the code must do.
+### Startup Behavior
+The **Shrike Lite RP2040** initializes all required peripherals:
+- GPIO pins (input/output)
+- ADC channels (MQ2, MQ4, MQ7 gas sensors)
+- PWM outputs (servo motor)
+- Digital pins (HC-SR04 ultrasonic sensor, LEDs, buzzer, motor driver)
 
-Include:
+A **20-second warm-up delay** is applied to stabilize MQ gas sensors.  
+The servo motor is set to **90° (center position)**, and the **Green LED** is turned ON to indicate system readiness.
 
-- startup behavior,
-- input handling,
-- sensor reading,
-- decision logic,
-- output behavior,
-- communication logic,
-- reset behavior.
+---
 
-**Response:**  
-`
+### Input Handling
+The system operates **fully autonomously**, without external communication.
 
-- **Startup behavior:**  
-  The ESP32 initializes motor pins, PWM control, and starts a WiFi access point with a web server. The laptop initializes camera input, tracking system, and projection mapping.
-- **Input handling:**  
-  Movement commands are received from the laptop (pygame sends http requests)
-- **Sensor reading:**  
-  The camera continuously captures frames, and OpenCV detects ArUco markers to determine the car’s position and orientation.
-- **Decision logic:**  
-  The system maps the car’s position into a virtual coordinate system and checks for nearby obstacles or collisions. If movement is valid, the command is allowed; if not, it is blocked or replaced with a feedback action (like a slight shake).
-- **Output behavior:**  
-  The ESP32 drives the motors using PWM signals to control speed and direction. The projector displays the updated game environment, including obstacles, targets, and feedback visuals.
-- **Communication logic:**  
-  The laptop sends HTTP requests (e.g., `/forward`, `/left`) to the ESP32 over WiFi. The ESP32 parses these commands and executes motor actions.
-- **Reset behavior:**  
-  If no command is received within a short timeout, the ESP32 stops the motors. The game resets when a level is completed or restarted.`
+Inputs are received from:
+- **MQ2, MQ4, MQ7 gas sensors (analog inputs)**
+- **HC-SR04 ultrasonic sensor (distance measurement)**
+
+---
+
+### Sensor Reading
+The RP2040 continuously samples sensor data:
+
+- **Gas Sensors (ADC):**
+  - MQ2 → Smoke / LPG detection  
+  - MQ4 → Methane detection  
+  - MQ7 → Carbon Monoxide detection  
+  - Read every **500 ms** with averaging  
+
+- **Ultrasonic Sensor:**
+  - Distance measured using trigger/echo pulse timing  
+  - Read every **100 ms**
+
+---
+
+### Decision Logic
+
+#### Gas Detection Logic
+Sensor values are compared with predefined thresholds:
+- MQ2 High → Smoke / LPG detected  
+- MQ4 High → Methane detected  
+- MQ7 High → CO detected (**highest priority**)  
+
+#### Obstacle Detection Logic
+Distance-based classification:
+- **> 60 cm** → Safe zone  
+- **30–60 cm** → Caution zone  
+- **< 30 cm** → Critical zone  
+
+#### Combined Decision Logic
+- If obstacle detected → Stop and scan surroundings  
+- If gas detected → Trigger alert system  
+- If both occur → Prioritize **safety (stop + alert)**  
+
+---
+
+### Output Behavior
+
+#### Motor Control
+- Moves forward in safe conditions  
+- Slows down in caution zone  
+- Stops and reroutes in critical zone  
+
+#### Servo Motor
+- Rotates from **0° to 180°**
+- Identifies:
+  - Direction with maximum clearance  
+  - Direction with highest gas concentration  
+
+#### LED Indicators
+- 🟢 Green → Safe  
+- 🟡 Yellow → Warning  
+- 🔴 Red → Danger  
+
+#### Buzzer
+- Activated during hazardous conditions  
+- Pattern varies based on severity  
+
+---
+
+### Communication Logic
+- No wireless communication is used  
+- Internal communication via:
+  - ADC (sensor data)
+  - GPIO (digital signals)
+  - PWM (servo control)
+
+(Optional USB serial debugging)
+
+---
+
+### Reset Behavior
+- System resets on power restart  
+- If invalid readings occur → Motors stop (fail-safe)  
+- Default state ensures **safe shutdown in error conditions**
+
+---
 
 ## 10.3 Code Flowchart
 
-Insert a flowchart showing your code logic.
+![Flowchart](flowchart.png)
 
-Suggested sequence:
+> 📌 Replace `flowchart.png` with your actual uploaded diagram in the repository.
 
-- start,
-- initialize,
-- wait for input,
-- read input,
-- decision,
-- trigger output,
-- repeat or reset,
-- error handling.
+---
 
-**Insert image below:**  
-<img width="1600" height="1200" alt="image" src="" />
-<img width="1600" height="1200" alt="image" src="" />
-
-
-
+### Flow Description
+```text
+Start
+  ↓
+Initialize RP2040 (GPIO, ADC, PWM)
+  ↓
+Warm-up MQ Sensors (20 sec)
+  ↓
+Set Servo to Center (90°)
+  ↓
+Loop Start
+  ↓
+Read MQ2, MQ4, MQ7 (ADC)
+  ↓
+Read Distance (Ultrasonic)
+  ↓
+Is Distance < 30 cm?
+   ├── YES → Stop Motors
+   │        → Perform Servo Scan (0–180°)
+   │        → Find Best Direction
+   │        → Turn Robot
+   │
+   └── NO
+        ↓
+   Is Distance < 60 cm?
+        ├── YES → Slow Down + Yellow LED
+        └── NO → Move Forward
+  ↓
+Classify Gas Type
+  ↓
+Is Hazard Detected?
+   ├── YES → Activate Red LED + Buzzer
+   └── NO → Green LED
+  ↓
+Update Outputs
+  ↓
+Repeat Loop
+```
 
 # 11. Bill of Materials
 
@@ -709,7 +817,6 @@ Suggested images:
 
 - early sketch,
 - prototype,
-- <img width="960" height="1280" alt="WhatsApp Image 2026-04-24 at 9 46 02 AM (1)" src="https://github.com/user-attachments/assets/74baa570-5770-483e-be6d-d2f03386e37c" 
 - electronics testing,
 - mechanism test,
 - app screenshot,

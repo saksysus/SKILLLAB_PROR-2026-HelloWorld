@@ -780,12 +780,12 @@ Expected outcomes:
 
 ## 13.2  Update Log
 
-| Week   | Planned Goal   | What Actually Happened | What Changed   | Next Steps     |
-| ------ | -------------- | ---------------------- | -------------- | -------------- |
-| Week 1 | `[Write here]` | `[Write here]`         | `[Write here]` | `[Write here]` |
-| Week 2 | `[Write here]` | `[Write here]`         | `[Write here]` | `[Write here]` |
-| Week 3 | `[Write here]` | `[Write here]`         | `[Write here]` | `[Write here]` |
-| Week 4 | `[Write here]` | `[Write here]`         | `[Write here]` | `[Write here]` |
+| Hour | Planned Goal | What Actually Happened | What Changed | Next Steps |
+|------|-------------|----------------------|--------------|-----------|
+| **Hour 1** | Finalise plan + test divider circuit | Finalised project architecture, checked all components, started basic sensor testing | Shifted focus from divider circuit to full sensor validation since multiple sensors were used | Complete individual sensor calibration and wiring |
+| **Hour 2** | Test all subsystems individually | Tested MQ sensors, ultrasonic sensor, and motor driver separately; identified noise in sensor readings | Added averaging/filtering logic for stable readings | Integrate sensors with RP2040 and begin motor control testing |
+| **Hour 3** | Full integration + first live run | Integrated sensors, motors, and servo; performed first full system test | Encountered unstable movement and delay issues → optimized code and wiring | Fix delays, improve response time, and refine logic |
+| **Hour 4** | Tune + document + submit | Tuned thresholds, improved obstacle detection, finalized working demo; completed documentation | Reduced complexity by simplifying some logic for stability | Final testing, README upload, and submission |
 
 ---
 
@@ -800,10 +800,11 @@ Expected outcomes:
 
 ## 14.2 Biggest Unknown Right Now
 
-What is the single biggest uncertainty in your project at this stage?
+The single biggest uncertainty in our project at this stage is the upgrade to LoRa communication and the optimization of the ultrasonic sensing system.
 
-**Response:**  
+At present, our system works effectively at a short range using onboard processing and local communication. However, it is still unclear how reliably the system will perform in long-range or isolated environments once LoRa is integrated. Factors such as signal stability, data loss, and real-world transmission range under obstacles remain uncertain.
 
+Additionally, the ultrasonic sensing aspect still has limitations in terms of accuracy and consistency under different environmental conditions. Improving its reliability for real-time obstacle detection and ensuring stable readings during robot movement is another key area that requires further testing and refinement.
 
 ---
 
@@ -835,34 +836,27 @@ What is the single biggest uncertainty in your project at this stage?
 
 ## 16.1 Fabrication Process
 
-Describe how the project was physically made.
+The fabrication process involved designing, cutting, assembling, fastening, wiring, and refining the physical structure and electronic system of the robot. Each stage was done carefully to ensure proper integration of mechanical and electronic components.
 
-Include:
+---
 
-- cutting,
-- 3D printing,
-- assembly,
-- fastening,
-- wiring,
-- finishing,
-- revisions.
+### Cutting
+The base structure of the robot was made using a transparent acrylic sheet. The sheet was precisely cut according to the required chassis dimensions. Holes were drilled into the acrylic sheet to mount motors, the caster ball, and electronic components securely. This ensured proper alignment and stable fitting of all parts.
 
-**Response:**  
-`The fabrication process involved designing, manufacturing, assembling, and refining both the physical structure and electronic integration of the system.`
+---
 
-`Design (CAD Modeling):
-The initial model was created using CAD software, where components were designed based on the actual dimensions of the electronic parts. This ensured accurate fitting and minimized errors during assembly.
-Cutting (Laser Cutting):
-The designed parts were fabricated using laser cutting techniques. Sheets were cut precisely according to the CAD model to create the structural base and mounts for components.`
+### Assembly
+The mechanical assembly mainly included fixing the chassis structure, attaching the two DC motors, and mounting the caster ball for balance and movement. The wheels were attached to the motor shafts to complete the movement system of the robot.
 
-`Components were fixed using adhesives and mechanical supports. Certain parts were intentionally kept modular (not permanently fixed) to allow easy replacement and modification of electronics.
-Surface Finishing:
-Some parts were sanded to smooth rough edges after cutting. Sawdust mixed with adhesive was used to fill gaps and uneven edges, improving structural finish. The final structure was then painted for better aesthetics and durability.`
+---
 
-`Environment Setup (Dark Room Fabrication):
-To enhance projection visibility, a controlled dark environment was created using Z-boards, paper sheets, and bedsheets. This minimized external light interference and improved projection clarity.
-Revisions and Iterations:
-Multiple adjustments were made throughout the process, including refining alignment, improving structural stability, repositioning components, and optimizing the interaction between the physical car and projected environment.`
+### Fastening
+All components were secured onto the acrylic chassis using screws, nuts, and mechanical mounts. Fastening was done in a way that allowed stability during movement while still keeping some parts accessible for future modifications or replacements.
+
+---
+
+### Wiring
+The wiring process involved connecting all electronic components, including the Shrike (RP2040) board, L298N motor driver, ultrasonic sensor, servo motor, and gas sensors. Proper connections were made between control pins, power supply, and ground to ensure stable operation. Care was taken to avoid loose connections and ensure correct signal flow between modules.
 
 ## 16.2 Build Photos
 

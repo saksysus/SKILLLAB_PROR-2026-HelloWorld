@@ -266,6 +266,11 @@ Include:
 
 Add an early sketch of the full idea.
 
+## 🔗 Interactive Flowchart
+
+View full diagram here:  
+👉 https://app.eraser.io/workspace/5mr0YmXaqiqY6TQQ3xRs?origin=share&diagram=D9Y5CVfxsq_JOQrnAcpen
+
 **Insert image below:**  
 `[Upload image and link here]`
 

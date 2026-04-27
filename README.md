@@ -57,7 +57,8 @@ By the final review, this README should clearly show:
 
 ## 1.1 Studio / Group Name
 
-`ToxicTrack Innovators`
+<img width="1280" height="720" alt="picture " src="https://github.com/user-attachments/assets/6c1dd57c-a289-45a6-ad6e-6023d66f1ec9" />
+
 
 ---
 
@@ -67,7 +68,7 @@ By the final review, this README should clearly show:
 | ------------------ | -----------------------------------------| --------------------- | -------------------------------------------- |
 | Sakshi Gupta       | Electronics & Hardware Implementation    | System Integration    | Circuit Design, Embedded Systems, Debugging   |
 | Kunal Dewangan     | Electronics & Software Development       | Fabrication           | Prototyping, Component Handling, Assembly     |
-| Prisha Ale         | Documentation                            | UI/Presentation       | Clear Writing, Creativity, Presentation Skills|
+| Prisha Ale         | Electronics                              | Testing & connections | Clear Writing, Creativity, Presentation Skills|
 | Shubham Kulkarni   | Documentation                            | Research & Planning   | Technical Writing, Organization, Analysis     |
 
 ---

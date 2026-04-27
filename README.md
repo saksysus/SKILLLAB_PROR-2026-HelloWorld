@@ -295,10 +295,10 @@ Add a sketch with labels showing:
 
 | Dimension        | Value   |
 | ---------------- | ------- |
-| Length           | `16 cm` |
+| Length           | `22 cm` |
 | Width            | `16 cm` |
 | Height           | `8 cm`  |
-| Estimated weight | `400 g` |
+| Estimated weight | `750 g` |
 
 ---
 
@@ -327,13 +327,78 @@ Add a sketch with labels showing:
 ## 8.2 Wiring Plan
 
 Describe the main electrical connections.
+### 🔹 ADC (Analog Inputs)
+- The **RP2040** provides **3 ADC pins only**:
+  - `GP26`
+  - `GP27`
+  - `GP28`
+- Suitable for analog sensors like:
+  - MQ2 (Smoke)
+  - MQ4 (Methane)
+  - MQ7 (Carbon Monoxide)
 
-**Response:**  
-`The ESP32 is connected to the motor driver (L298N) using four GPIO pins (18,19; 22,23) to control motor direction (IN1, IN2, IN3, IN4). Two PWM-capable pins (ENA and ENB; 25 and 26) are connected to control the speed of each motor.
+---
 
-The motors are connected to the output terminals of the motor driver. The motor driver is powered directly by the battery pack (higher voltage), while the ESP32 receives regulated 5V from the buck converter.
+### 🔹 Digital I/O Pins
+- GPIO pins are labeled as:
+  - `GP0` to `GP28`
+- ⚠️ Note:
+  - Unlike Arduino boards, pins are **not labeled as D2, D5, etc.**
+  - Always use **GPIO numbering (GPx)**
 
-All components share a common ground to ensure stable operation. The projector and camera are connected to the laptop, which handles tracking and game logic separately.`
+---
+
+### 🔹 PWM Support
+- PWM is available on **almost all GPIO pins**
+- Example:
+  - Servo motor works on `GP9`
+
+---
+
+### 🔹 Voltage Logic (IMPORTANT ⚠️)
+- The RP2040 operates on **3.3V logic**
+- MQ sensors can output **up to 5V on AOUT**
+
+#### ✔ Solution:
+- Use a **voltage divider** or **level shifter**
+- Protects the board from damage
+
+---
+
+### 🔹 Power & Programming
+- **USB-C onboard**
+- Used for:
+  - Power supply
+  - Code uploading
+
+---
+
+### ✅ Summary
+| Feature | Details |
+|--------|--------|
+| ADC Pins | GP26, GP27, GP28 |
+| GPIO Range | GP0–GP28 |
+| PWM | Available on most pins |
+| Logic Level | 3.3V |
+| USB | USB-C (Power + Programming) |
+
+## Pin Configuration Map
+
+| Pin | Component | Signal Type | Direction |
+|-----|----------|------------|-----------|
+| **GP26 (ADC0)** | MQ2 AOUT | Analog | Input |
+| **GP27 (ADC1)** | MQ4 AOUT | Analog | Input |
+| **GP28 (ADC2)** | MQ7 AOUT | Analog | Input |
+| **GP2** | MQ2 DOUT | Digital | Input |
+| **GP3** | MQ4 DOUT | Digital | Input |
+| **GP4** | MQ7 DOUT | Digital | Input |
+| **GP5** | HC-SR04 TRIG | Digital | Output |
+| **GP6** | HC-SR04 ECHO | Digital | Input |
+| **GP9** | Servo SG90 PWM | PWM | Output |
+| **GP10** | Red LED | Digital | Output |
+| **GP11** | Yellow LED | Digital | Output |
+| **GP12** | Green LED | Digital | Output |
+| **GP13** | Buzzer (via NPN transistor) | Digital | Output |
 
 ## 8.3 Circuit Diagram
 

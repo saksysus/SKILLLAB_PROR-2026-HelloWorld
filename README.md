@@ -882,40 +882,41 @@ Suggested images:
 
 
 
-# 17. Final Outcome
-
-## 17.1 Final Description
-
-Describe the final version of your project.
-
-**Response:**  
-
-
-## 17.2 What Works Well
-
-
-
-## 17.3 What Still Needs Improvement
-
-
-## 17.4 What Changed From the Original Plan
-
-How did the project change from the initial idea?
-
-**Response:**  
-
+## 17. Final Outcome
 
 ---
 
-# 18. Reflection
+### 17.1 Final Description
+The final version of our project is a smart autonomous robot built using a Shrike (RP2040-based) controller. The robot is capable of detecting environmental conditions using multiple sensors and moving using a motor-driven chassis. It integrates gas detection, obstacle detection, and servo-based scanning using an ultrasonic sensor. The system processes real-time data and responds by controlling movement and providing environmental feedback.
 
+---
+
+### 17.2 What Works Well
+The sensor system works effectively in detecting environmental changes. The gas sensors successfully detect variations in gas levels, and the ultrasonic sensor reliably measures distance for obstacle detection. The motor system allows controlled movement of the robot, and the servo motor enables directional scanning for better environmental coverage. Overall, the integration of sensors and movement provides a functional working prototype.
+
+---
+
+### 17.3 What Still Needs Improvement
+The system can be improved by enhancing sensor accuracy and stability through better-quality industrial-grade sensors. The communication range can be extended using technologies like LoRa for long-distance data transmission instead of limited WiFi range. Additionally, power efficiency and battery life can be improved to support longer operational time. A more robust casing and optimized wiring would also increase durability for real-world deployment.
+
+---
+
+### 17.4 What Changed From the Original Plan
+Initially, the project was planned as a simple stationary sensor-based system that only focused on detecting environmental parameters like gas or flame. However, during development, we enhanced the idea by integrating mobility into the system. We converted it into a moving robot capable of navigating its environment while collecting data. This upgrade significantly improved its functionality by allowing active monitoring instead of passive sensing, making the system more practical and impactful.
 ## 18.1 Team Reflection
 
-What did your team do well?  
-What slowed you down?  
-How well did you manage time, tasks, and responsibilities?
+### What did our team do well?
+Our team worked effectively by dividing tasks based on individual strengths. Sakshi and Kunal focused on building and assembling the motor system and chassis, ensuring the robot structure and movement system were properly implemented. Prisha handled testing and debugging of all sensors, making sure the ultrasonic and gas sensors were working correctly and giving accurate readings. Shubham took responsibility for documentation, PPT preparation, and maintaining project logs, ensuring all work was properly recorded and presented.
 
-**Response:**  
+---
+
+### What slowed us down?
+The main challenges we faced were wiring issues, power stability problems, and debugging sensor outputs. Integrating multiple components like motors, sensors, and servo together also required multiple iterations. At times, incorrect connections and signal mismatches slowed down development and required rework.
+
+---
+
+### Time, Task, and Responsibility Management
+We managed our tasks by clearly dividing responsibilities among team members, which improved efficiency. Although initial delays occurred due to hardware debugging and integration issues, we gradually improved coordination. Overall, task distribution was effective, and each member contributed actively to their assigned roles, which helped complete the project successfully.  
 
 
 ## 18.2 Technical Reflection
@@ -924,6 +925,29 @@ How well did you manage time, tasks, and responsibilities?
 We learned about practical electronics by working with real components such as the Shrike (RP2040) board, L298N motor driver, ultrasonic sensor, servo motor, and gas sensors. We understood how power distribution, grounding, and voltage levels affect the stability of the entire system.
 
 ---
+
+### Motor Driver and Sensors
+We learned how a motor driver (L298N) acts as an interface between low-power microcontroller signals and high-power DC motors. We also explored how different sensors like ultrasonic and gas sensors convert physical signals into electrical data that can be processed by the controller.
+
+---
+
+### Coding
+We gained experience in programming microcontrollers to control hardware components. This included writing logic for motor control, reading sensor values, and integrating multiple modules together to achieve real-time behavior in the robot system.
+
+---
+
+### Mechanisms
+We learned how mechanical movement is achieved using DC motors and how a servo motor can be used for controlled rotation. We also understood how the physical structure of the robot affects movement stability and performance.
+
+---
+
+### Fabrication
+We worked on assembling the robot chassis, mounting sensors, and securely fixing components. This helped us understand the importance of proper wiring, structural stability, and physical alignment in embedded systems.
+
+---
+
+### Integration
+We learned how to integrate hardware and software components into a single working system. Combining sensors, actuators, and control logic allowed us to build a functional autonomous robot that responds to real-world inputs in real time.
 
 ### Motor Driver and Sensors
 We learned how a motor driver (L298N) acts as an interface between low-power microcontroller signals and high-power DC motors. We also explored how different sensors like ultrasonic and gas sensors convert physical signals into electrical data that can be processed by the controller.

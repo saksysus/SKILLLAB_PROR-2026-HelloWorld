@@ -443,8 +443,6 @@ Insert a hand-drawn or software-made circuit diagram.
 
 ---
 
-# 10. Software Architecture & Logic
-
 ## 10.2 Software Logic
 
 ### Startup Behavior

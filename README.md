@@ -593,42 +593,65 @@ Repeat Loop
 
 # 11. Bill of Materials
 
-## 11.1 Full BOM
+## 11.3 Items You Chose
 
-| Item | Quantity | In Kit? | Need to Buy? | Estimated Cost (INR) | Material / Spec | Why This Choice? |
-|------|---------|---------|--------------|----------------------|------------------|------------------|
-| Shrike Lite RP2040 | 1 | Yes | No | 0 | RP2040-based board | Main microcontroller for processing and control |
-| Motor Driver | 1 | Yes | No | 0 | L298N Dual H-Bridge | To control both DC motors |
-| DC Motors + Wheels | 2 | No | Yes | 150 | BO Motors + 6 cm wheels | Provides sufficient torque for movement |
-| Li-ion Batteries + Holder | 1 | No | Yes | 200 | 2x 18650 cells | Portable and rechargeable power source |
-| MQ2 Gas Sensor | 1 | Yes | No | 0 | LPG/Smoke sensor | Detects smoke and combustible gases |
-| MQ4 Gas Sensor | 1 | Yes | No | 0 | Methane sensor | Detects methane (CNG) |
-| MQ7 Gas Sensor | 1 | Yes | No | 0 | CO sensor | Detects carbon monoxide (critical gas) |
-| Ultrasonic Sensor | 1 | Yes | No | 0 | HC-SR04 | Measures distance for obstacle avoidance |
-| Servo Motor | 1 | Yes | No | 0 | SG90 180° servo | Enables directional scanning |
-| Buzzer | 1 | Yes | No | 0 | Active buzzer | Provides audio alerts |
-| LEDs (Red, Yellow, Green) | 3 | Yes | No | 0 | 5mm LEDs | Visual hazard indication |
-| Resistors | 6 | Yes | No | 0 | 220Ω, 1kΩ | Current limiting and protection |
-| Robot Chassis | 1 | No | Yes | 200 | Acrylic 2-wheel base | Structural support |
-| Jumper Wires | 1 set | Yes | No | 0 | Male-Male wires | Circuit connections |
-| Breadboard | 1 | Yes | No | 0 | Standard | Prototyping and testing |
+| Item | Why Needed |
+|------|-----------|
+| BO Motors + Wheels | Drive system for robot movement |
+| Li-ion Batteries + Holder | Portable power supply for entire system |
+| Robot Chassis | Structural base to mount all components |
+| Jumper Wires | Electrical connections between components |
+| Breadboard | Prototyping and testing circuits |
+| L298N Motor Driver | Control direction and speed of motors |
+| MQ2 Gas Sensor | Detect smoke and LPG gases |
+| MQ4 Gas Sensor | Detect methane gas |
+| MQ7 Gas Sensor | Detect carbon monoxide (CO) |
+| Ultrasonic Sensor (HC-SR04) | Obstacle detection and distance measurement |
+| Servo Motor (SG90) | Rotates sensors for scanning environment |
+| Buzzer | Audio alert system for hazards |
+| LEDs (Red, Yellow, Green) | Visual indication of system status |
 
 
 ## 11.2 Material Justification
 
-Explain why you selected your main materials and components.
+The selection of components in this project was based on reliability, simplicity, cost-effectiveness, and suitability for real-time embedded sensing and control.
 
-**Response:**  
-`DC motors (BO motors) were chosen instead of servos or steppers because the system requires continuous rotation for movement rather than precise angular control (Previously, we were considering using steppers as we were planning on tracking movement on the ESP using its relative position from an origin, but since we're using a camera now, this is not required). A motor driver (L298N) was used to allow bidirectional control and speed variation using PWM.`
+The **Shrike Lite RP2040** was chosen as the main microcontroller because it provides sufficient processing power, multiple ADC channels for sensor input, and PWM capabilities for motor and servo control. It also allows a fully self-contained embedded system without requiring external modules like WiFi.
+
+**BO DC motors** were selected instead of servo or stepper motors because the robot requires continuous rotation for movement rather than precise positional control. These motors provide adequate torque, are low-cost, and are ideal for simple mobile robotic platforms.
+
+The **L298N motor driver** was used to control the motors, as it supports bidirectional movement and speed control using PWM signals from the RP2040. It also allows safe interfacing between the motors and the microcontroller.
+
+The **MQ2, MQ4, and MQ7 gas sensors** were chosen to implement an electronic nose system. Each sensor has different sensitivity characteristics, and together they enable basic gas classification (LPG, methane, carbon monoxide) using pattern-based detection instead of relying on a single sensor.
+
+The **HC-SR04 ultrasonic sensor** was selected for obstacle detection due to its accuracy, low cost, and ease of integration. It enables real-time distance measurement, which is essential for collision avoidance.
+
+A **servo motor (SG90)** is used to rotate the sensor assembly, allowing the robot to scan its surroundings. This adds directional awareness, helping the system identify both obstacle-free paths and areas of higher gas concentration.
+
+The **LED indicators (red, yellow, green)** were included to provide simple and intuitive visual feedback for system status and hazard levels, while the **buzzer** provides an immediate audible alert in critical conditions.
+
+The **Li-ion battery pack** was selected for portability and sufficient current supply, ensuring the system can operate independently without external power.
+
+Overall, the chosen components balance functionality, cost, and ease of implementation, making the system effective for a hackathon-scale autonomous safety robot.
 
 
-## 11.3 Items You chose
+## 11.3 Items You Chose
 
-| Item                 | Why Needed               | Purchase Link | Latest Safe Date to Procure | Status       |
-| -------------------- | ------------------------ | ------------- | --------------------------- | ------------ |
-| `BO Motors + Wheels` | `Drive system for car`   | `robu.in`     | `15th April`                | `[Received]` |
-| `Buck Converter`     | `Stable power for ESP32` | `local store` | `before testing`            | `[Received]` |
-| `Li-ion Batteries`   | `Portable power`         | `local store` | `before testing`            | `Recieved`   |
+| Item | Why Needed | Latest Safe Date to Procure | Status |
+|------|-----------|-----------------------------|--------|
+| BO Motors + Wheels | Drive system for robot movement | 15th April | Received |
+| Li-ion Batteries + Holder | Portable power supply for entire system | Before testing | Received |
+| Robot Chassis | Structural base to mount all components | 15th April | Received |
+| Jumper Wires | Electrical connections between components | Before assembly | Available |
+| Breadboard | Prototyping and testing circuits | Before testing | Available |
+| L298N Motor Driver | Control direction and speed of motors | Before testing | Available |
+| MQ2 Gas Sensor | Detect smoke and LPG gases | Before testing | Available |
+| MQ4 Gas Sensor | Detect methane gas | Before testing | Available |
+| MQ7 Gas Sensor | Detect carbon monoxide (CO) | Before testing | Available |
+| Ultrasonic Sensor (HC-SR04) | Obstacle detection and distance measurement | Before testing | Available |
+| Servo Motor (SG90) | Rotates sensors for scanning environment | Before testing | Available |
+| Buzzer | Audio alert system for hazards | Before testing | Available |
+| LEDs (Red, Yellow, Green) | Visual indication of system status | Before testing | Available |
 
 ## 11.4 Budget Summary
 

@@ -75,15 +75,8 @@ By the final review, this README should clearly show:
 
 ## 1.3 Project Title
 
-`"ToxicTrack Bot"`
+<img width="1536" height="1024" alt="track bot" src="https://github.com/user-attachments/assets/9f8d940d-ea44-42ad-9427-551a0479ecfe" />
 
-`(Autonomous Gas Detection & Hazard Tracking System)`
-
-<p align="center">
-  <img src="images/toxictrack-bot.png" alt="ToxicTrack Bot" width="800"/>
-</p>
-
----
 
 ## 1.4 One-Line Pitch
 

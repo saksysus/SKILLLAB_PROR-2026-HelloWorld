@@ -595,13 +595,24 @@ Repeat Loop
 
 ## 11.1 Full BOM
 
-| Item                             | Quantity | In Kit? | Need to Buy? | Estimated Cost | Material / Spec               | Why This Choice?          |
-| -------------------------------- | --------:| ------- | ------------ | --------------:| ----------------------------- | ------------------------- |
-| `[ESP32]`                        | `1`      | `Yes`   | `No`         | `0`            | `38 Pin ESP32`                | `[To control components]` |
-| `[Motor Driver]`                 | `[1]`    | `[Yes]` | `[No]`       | `0`            | `[LN296]`                     | `[To drive both motors]`  |
-| `[DC Motors and wheel]`          | `[2]`    | `[No]`  | `[Yes]`      | `[150]`        | `[BO Motors and 6 cm wheels]` | `[high torque motors]`    |
-| `[Buck Converter]`               | `[1]`    | `[No]`  | `[Yes]`      | `[75]`         |                               |                           |
-| `[Li-ion batteries with holder]` | `[1]`    | `[No]`  | `[Yes]`      | `[200]`        |                               |                           |
+| Item | Quantity | In Kit? | Need to Buy? | Estimated Cost (INR) | Material / Spec | Why This Choice? |
+|------|---------|---------|--------------|----------------------|------------------|------------------|
+| Shrike Lite RP2040 | 1 | Yes | No | 0 | RP2040-based board | Main microcontroller for processing and control |
+| Motor Driver | 1 | Yes | No | 0 | L298N Dual H-Bridge | To control both DC motors |
+| DC Motors + Wheels | 2 | No | Yes | 150 | BO Motors + 6 cm wheels | Provides sufficient torque for movement |
+| Li-ion Batteries + Holder | 1 | No | Yes | 200 | 2x 18650 cells | Portable and rechargeable power source |
+| MQ2 Gas Sensor | 1 | Yes | No | 0 | LPG/Smoke sensor | Detects smoke and combustible gases |
+| MQ4 Gas Sensor | 1 | Yes | No | 0 | Methane sensor | Detects methane (CNG) |
+| MQ7 Gas Sensor | 1 | Yes | No | 0 | CO sensor | Detects carbon monoxide (critical gas) |
+| Ultrasonic Sensor | 1 | Yes | No | 0 | HC-SR04 | Measures distance for obstacle avoidance |
+| Servo Motor | 1 | Yes | No | 0 | SG90 180° servo | Enables directional scanning |
+| Buzzer | 1 | Yes | No | 0 | Active buzzer | Provides audio alerts |
+| LEDs (Red, Yellow, Green) | 3 | Yes | No | 0 | 5mm LEDs | Visual hazard indication |
+| Resistors | 6 | Yes | No | 0 | 220Ω, 1kΩ | Current limiting and protection |
+| Robot Chassis | 1 | No | Yes | 200 | Acrylic 2-wheel base | Structural support |
+| Jumper Wires | 1 set | Yes | No | 0 | Male-Male wires | Circuit connections |
+| Breadboard | 1 | Yes | No | 0 | Standard | Prototyping and testing |
+
 
 ## 11.2 Material Justification
 

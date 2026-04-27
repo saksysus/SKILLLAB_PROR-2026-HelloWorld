@@ -61,10 +61,12 @@ By the final review, this README should clearly show:
 
 ## 1.2 Team Members
 
-| Name           | Primary Role                    | Secondary Role | Strengths Brought to the Project |
-| -------------- | ------------------------------- | -------------- | -------------------------------- |
-| `Gopalakrishnan` | `[Electronics / Coding / App ]` | `Documentation`  | `Documentation, Gift of Gab `|
-| `KAder Shaikh`  | `[Electronics / Fabrication]`   | `[Coding]`     | `Material Handling, Hardware`    |
+| Name               | Primary Role                          | Secondary Role        | Strengths Brought to the Project              |
+| ------------------ | ------------------------------------- | --------------------- | -------------------------------------------- |
+| Sakshi Gupta       | Electronics & Software Development    | System Integration    | Circuit Design, Embedded Systems, Debugging   |
+| Kunal Dewangan     | Electronics & Hardware Implementation | Fabrication           | Prototyping, Component Handling, Assembly     |
+| Prisha Ale         | Documentation                        | UI/Presentation       | Clear Writing, Creativity, Presentation Skills|
+| Shubham Kulkarni   | Documentation                        | Research & Planning   | Technical Writing, Organization, Analysis     |
 
 ## 1.3 Project Title
 

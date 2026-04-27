@@ -875,17 +875,10 @@ The wiring process involved connecting all electronic components, including the 
 
 ## 16.2 Build Photos
 
-Add photos throughout the project.
+<img width="1200" height="1600" alt="WhatsApp Image 2026-04-27 at 5 12 17 PM" src="https://github.com/user-attachments/assets/e28130bc-0d7e-4921-9b34-0845be5bb330" />
+<img width="1200" height="1600" alt="WhatsApp Image 2026-04-27 at 5 12 23 PM (1)" src="https://github.com/user-attachments/assets/306762f9-b0a6-426a-acf0-1c2fab15119f" />
+<img width="1200" height="1600" alt="WhatsApp Image 2026-04-27 at 4 52 36 PM" src="https://github.com/user-attachments/assets/422b79bc-48cc-4405-8642-1b4ec8e8594f" />
 
-Suggested images:
-
-- early sketch,
-- prototype,
-- electronics testing,
-- mechanism test,
-- app screenshot,
-- final build.
-- <img width="960" height="1280" alt="WhatsApp Image 2026-04-24 at 9 46 02 AM (1)" src="https://github.com/user-attachments/assets/74baa570-5770-483e-be6d-d2f03386e37c" />
 
 
 

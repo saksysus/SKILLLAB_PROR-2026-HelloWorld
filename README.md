@@ -808,29 +808,44 @@ Additionally, the ultrasonic sensing aspect still has limitations in terms of ac
 
 ---
 
-# 15. Testing 
+# 15. Testing
 
 ## 15.1 Technical Testing Plan
 
-| What Needs Testing     | How You Will Test It                                                                 | Success Condition                                                                                    |
-| ---------------------- | ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------- |
-| `[Wifi connection]`    | `[Check if motor spins via app button]`                                              | `[Both motors accurately respond to wifi signals]`                                                   |
-                       |
+| What Needs Testing        | How You Will Test It                                      | Success Condition |
+|--------------------------|-----------------------------------------------------------|-------------------|
+| Gas sensor readings (MQ2, MQ4, MQ7) | Expose sensors to smoke/lighter gas and observe values | Sensors show clear variation and correct gas detection |
+| Ultrasonic sensor        | Place obstacles at different distances and measure output | Accurate distance measurement within expected range |
+| Motor control            | Run motors forward, backward, and turning                 | Smooth and correct movement in all directions |
+| Servo scanning           | Rotate servo from 0° to 180° and observe movement         | Smooth rotation and correct angle positioning |
+| Obstacle avoidance logic | Place object in front and observe robot behavior          | Robot stops and changes direction correctly |
+| Gas detection alert system | Trigger gas sensors and check LED + buzzer response     | Correct LED (green/yellow/red) and buzzer activation |
+| Full system integration  | Run robot in real environment with obstacles + gas source | Robot detects gas and avoids obstacles simultaneously |
+
+---
+
 ## 15.2 Testing and Debugging Log
 
-| Date          | Problem Found                         | Type         | What You Tried                                | Result               | Next Action                                    |
-| ------------- | ------------------------------------- | ------------ | --------------------------------------------- | -------------------- | ---------------------------------------------- |
-| `18th April`  | `Car not balancing properly`          | `Mechanical` | `Add low-friction caster support to one side` | `Worked`             | `improve caster structure`                     |
+| Date       | Problem Found                          | Type        | What You Tried                                      | Result   | Next Action |
+|------------|----------------------------------------|------------|----------------------------------------------------|----------|-------------|
+| 27th April | Unstable sensor readings               | Electrical | Applied averaging and filtering in code            | Worked   | Fine-tune thresholds |
+| 27th April | Motors not responding properly         | Electrical | Checked wiring and motor driver connections        | Worked   | Secure wiring |
+| 27th April | Servo jittering                        | Electrical | Provided stable power and adjusted PWM signal      | Improved | Optimize power supply |
+| 27th April | Incorrect gas detection                | Software   | Adjusted threshold values and classification logic | Worked   | Test with more samples |
+| 27th April | Robot not stopping near obstacle       | Software   | Fixed ultrasonic timing and logic conditions       | Worked   | Improve response speed |
+| 27th April | Delay in system response               | Software   | Reduced delays and optimized loop                  | Improved | Further optimize code |
 
+---
 
 ## 15.3 Playtesting Notes
 
-| Tester      | What They Did                        | What Confused Them                    | What They Enjoyed                         | What You Will Change                          |
-| ----------- | ------------------------------------ | ------------------------------------- | ----------------------------------------- | --------------------------------------------- |
-| `Gopal` | `Tried navigating through obstacles` | `Some obstacles ewren't clear enough` | `Liked projection + real car interaction` | `Add a slight red highlight around obstacles` |
+| Tester        | What They Did                              | What Confused Them                     | What They Enjoyed                          | What You Will Change |
+|---------------|--------------------------------------------|----------------------------------------|---------------------------------------------|----------------------|
+| Sakshi        | Tested gas detection and obstacle handling | Delay in response at times             | Real-time gas detection + alert system      | Improve response speed |
+| Kunal         | Drove robot through obstacles              | Servo movement seemed slow             | Obstacle avoidance behavior                 | Increase servo speed |
+| Prisha        | Observed system alerts                     | LED indications not very distinct      | Buzzer alerts and visual feedback           | Improve LED clarity |
+| Shubham       | Reviewed full system operation             | Slight inconsistency in detection      | Overall system integration                  | Fine-tune sensor thresholds |
 
-
----
 
 # 16. Build Documentation
 

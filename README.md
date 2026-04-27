@@ -264,21 +264,16 @@ Include:
 
 ## 7.1 Concept Sketch
 
-Add an early sketch of the full idea.
-
 ## 🔗 Interactive Flowchart
 
 View full diagram here:  
 👉 https://app.eraser.io/workspace/5mr0YmXaqiqY6TQQ3xRs?origin=share&diagram=D9Y5CVfxsq_JOQrnAcpen
 
+Add an early sketch of the full idea.
 **Insert image below:**  
-`[Upload image and link here]`
+<img width="960" height="1280" alt="WhatsApp Image 2026-04-27 at 3 29 07 PM" src="https://github.com/user-attachments/assets/a92cefab-515e-4f6c-adb7-0fab73dd0bc6" />
 
-Example:
 
-```md
-
-```
 
 
 
